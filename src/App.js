@@ -1,8 +1,8 @@
 import React from 'react';
-
+import {Pos} from './pages/Pos'
 function App() {
   return (
-   <h1>hello app.js</h1>
+   <Pos/>
   );
 }
 
