@@ -1,0 +1,113 @@
+@import '../../styles/common.scss';
+.navbar {
+  grid-area: header;
+  padding: 0;
+  background: $header_bar_background;
+  color: #fff;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  z-index: 999;
+  .dropdown {
+    width: 50px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  .hamburgerMenu {
+    background-color: $primary;
+    margin: 0 15px 0 0;
+    height: 100%;
+    width: 50px;
+    line-height: 50px;
+    position: relative;
+  }
+  .register-info > * {
+    margin-right: 10px;
+    display: block;
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .register-info {
+    flex: 1;
+    align-items: center;
+    align-content: space-between;
+    display: flex;
+    .icon-store {
+      margin: auto 20px;
+      width: 28px;
+    }
+    span {
+      margin-right: 20px;
+    }
+    a {
+      color: #b5ebeb;
+      padding: 0 10px;
+      margin: auto 0;
+      box-sizing: border-box;
+      font-size: 0.7em;
+      position: relative;
+      text-decoration: none;
+      &:last-child::before {
+        content: '';
+        background: #b5ebeb55;
+        height: 1.5em;
+        width: 1px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        position: absolute;
+      }
+    }
+  }
+
+  .navbar,
+  .audio-player,
+  .full-screen {
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  .view-user {
+    width: 200px;
+    transition: 0.3s all linear;
+    // transition-delay: 0.4s;
+    &:hover {
+      background-color: $primary;
+    }
+    figure {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      place-items: center;
+      margin: 0;
+      padding: 0;
+      img {
+        width: 32px;
+        background-size: cover;
+      }
+    }
+  }
+  .logout {
+    display: grid;
+    place-items: center;
+    background-color: $secondary;
+    position: relative;
+    a {
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-decoration: none;
+    }
+    text-align: center;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0 10px;
+  }
+}

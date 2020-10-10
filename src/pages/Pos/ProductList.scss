@@ -1,0 +1,99 @@
+@import '../../styles/common.scss';
+
+.productList {
+  grid-area: list;
+  //   height: calc(100vh - 50px - var(--top-offset));
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+
+  //   search section
+  .searchSection {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+
+    .logo {
+      padding: 10px;
+      margin: 10px;
+      img {
+        max-width: 140px;
+        max-height: 100px;
+      }
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      align-content: flex-end;
+      margin: 20px 0 20px;
+      flex: 0 0 auto;
+      flex: 1;
+      .searchWrapper {
+        width: 90%;
+        display: inline-block;
+        margin-right: 5px;
+        position: relative;
+        input {
+          width: 100%;
+          padding: 5px 10px;
+          height: 30px;
+          display: inline-block;
+          border: 1px solid $primary;
+          margin-right: 5px;
+          color: #000;
+          font-weight: 600;
+          &:focus {
+            outline: none;
+            // border: 1px solid $primary;
+          }
+        }
+      }
+    }
+    .button {
+      margin-right: 15px;
+      .calculatorWrapper {
+        position: relative;
+        z-index: 1500;
+        a {
+          background: $header_bar_background;
+          color: #fff;
+          padding: 3px;
+          font-size: 29px;
+          height: 35px;
+          width: 38px;
+          display: flex;
+          align-items: center;
+          line-height: 42px;
+          cursor: pointer;
+          transition: all linear 0.3s;
+        }
+      }
+    }
+  }
+
+  //   product tabs section
+  .posTabs {
+    display: flex;
+    font-size: 0.8em;
+    flex: 0 0 auto;
+    .productListFilters {
+      .active {
+        background: $products_background;
+        color: #333;
+      }
+      span {
+        display: inline-block;
+        padding: 10px 25px;
+        cursor: pointer;
+        background: $primary;
+        color: #fff;
+        font-weight: 600;
+        transition: all 0.2s;
+      }
+    }
+    span {
+      margin-right: 2px;
+    }
+  }
+}
