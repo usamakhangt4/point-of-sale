@@ -22,12 +22,12 @@ export default function navbar() {
             <strong>Register:</strong> Evening Time Register
           </span>
           <a
-            class='manage-store-link'
+            className='manage-store-link'
             href='https://pos.t-techsolutions.org/wp-admin/'>
             Manage Store
           </a>
           <a
-            class='register-logout-link'
+            className='register-logout-link'
             href='https://pos.t-techsolutions.org/pos/?yith-pos-register-logout=1'>
             Switch Register
           </a>

@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react'
 import './Pos.scss';
 import './Cart.scss';
 import './ProductList.scss';
-import { Navbar } from '../../components';
+import { Navbar, ProductCard } from '../../components';
 import { AiFillCalculator, AiOutlineClose } from 'react-icons/ai';
 import { MdRemoveShoppingCart, MdAdd, MdLocalShipping } from 'react-icons/md';
 import { BiMessageDetail } from 'react-icons/bi';
 import { RiPagesLine } from 'react-icons/ri';
+import { categories, products } from './../../common/data';
+import { render } from '@testing-library/react';
 
-export default function Pos() {
+class Pos extends Component {
+  constructor(props){
+    super(props);
+    this.state= {
+      isProductShow: false,
+      products: [],
+      categories: []
+    }
+  }
+
+  componentDidMount() {
+    this.setState({categories, products});
+  }
+
+  viewProduct = () => {
+    this.setState({isProductShow: true})
+  }
+
+  render() {
+    const { categories, products, isProductShow} = this.state;
   return (
     <main>
       {/* navbar section */}
@@ -52,6 +73,17 @@ export default function Pos() {
         {/* pos category section */}
         <article className='categoryListContainer'>
           <div className='categoryList'>
+            {!isProductShow ? categories.map((elem, i) => {
+              return <div onClick={this.viewProduct}><ProductCard name={elem.name} imgURL={elem.image.src.replace(/\\/g, '')}/></div> 
+            }):
+            products.map((elem, i) => {
+              return <div><ProductCard name={elem.name} imgURL={elem.images[0].src.replace(/\\/g, '')} price={elem.price} onClick={this.viewProduct}/></div>
+            })
+            }
+          </div>
+        </article>
+        {/* <article className='categoryListContainer'>
+          <div className='categoryList'>
             <div className='productCategory category1'>
               <div className='categoryImage image'></div>
               <div className='categoryHeading'>
@@ -77,7 +109,7 @@ export default function Pos() {
               </div>
             </div>
           </div>
-        </article>
+        </article> */}
       </section>
 
       {/* cart section on right side */}
@@ -139,3 +171,6 @@ export default function Pos() {
     </main>
   );
 }
+}
+
+export default Pos
