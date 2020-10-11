@@ -1,0 +1,173 @@
+@import '../../styles/common.scss';
+article {
+  background-color: $extra-light-grey;
+  border-bottom: 2px solid $light-grey;
+  .itemRow {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    & > * {
+      margin: 0 5px;
+    }
+    .removeIcon {
+      font-size: 10px;
+      color: rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      padding: 10px;
+      margin-left: 0;
+      transition: color linear 0.3s;
+    }
+    .itemImage {
+      width: 50px;
+      height: auto;
+    }
+    .noteIcon {
+      align-self: center;
+    }
+    .itemName {
+      flex: 1;
+      font-weight: 600;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-around;
+    }
+    .itemQuantity {
+      .quantity {
+        display: flex;
+        align-items: center;
+        .minus {
+          width: 35px;
+          background: $primary;
+          color: #fff;
+          font-size: 30px;
+          font-weight: 300;
+          cursor: pointer;
+          user-select: none;
+          text-indent: unset;
+        }
+        .quantityNumber {
+          height: 35px;
+          box-sizing: border-box;
+          border: 1px solid $border-grey;
+          padding: 5px 10px;
+          color: #000;
+          width: 50px;
+          outline: none;
+          box-shadow: none;
+          font-size: 15px;
+          font-family: inherit;
+          display: inline-block;
+        }
+        .plus {
+          width: 35px;
+          background: $primary;
+          color: #fff;
+          font-size: 30px;
+          font-weight: 300;
+          cursor: pointer;
+          user-select: none;
+          text-indent: unset;
+        }
+      }
+    }
+    .itemPrice {
+      min-width: 70px;
+      color: #888;
+      font-size: 0.9em;
+    }
+    .itemTotal {
+      font-size: 1.1em;
+    }
+  }
+
+  .quantityNumber,
+  .minus,
+  .plus {
+    height: 35px;
+    text-align: center;
+    line-height: 1em;
+    border: 1px solid $primary;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .itemPrice,
+  .itemTotal {
+    min-width: 100px;
+    text-align: right;
+    font-weight: 600;
+  }
+
+  // cart item edit section
+
+  .itemEdit {
+    padding-bottom: 20px;
+    & > * {
+      text-align: right;
+      padding: 5px 0;
+    }
+    .editPrice {
+      text-align: right;
+      padding: 5px 0;
+      .priceLabel {
+        font-size: 0.75em;
+        margin-bottom: 7px;
+        font-weight: 600;
+        color: #707070;
+      }
+      .priceInputWrapper {
+        position: relative;
+        .priceInput {
+          text-align: right;
+          border-color: $border-grey;
+          height: 35px;
+          box-sizing: border-box;
+          border: 1px solid #dbdbdb;
+          padding: 5px 10px;
+          color: #000;
+        }
+      }
+    }
+    .editNote {
+      .editNoteLabel {
+        font-size: 0.75em;
+        margin-bottom: 7px;
+        font-weight: 600;
+        color: #707070;
+        .noteIcon {
+          margin-right: 7px;
+          color: #000;
+        }
+      }
+      textarea {
+        width: 70%;
+        border: 1px solid $border-grey;
+        height: 60px;
+        padding: 10px;
+        line-height: 1.2em;
+        display: inline-block;
+        float: right;
+      }
+      .editNoteButtonWrapper {
+        display: block;
+        clear: both;
+        padding-top: 10px;
+        .updateButton {
+          width: auto;
+          font-size: 12px;
+          color: #fff;
+          font-weight: 600;
+          font-size: 1em;
+          padding: 10px;
+          border: 0;
+          text-transform: uppercase;
+          cursor: pointer;
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}
