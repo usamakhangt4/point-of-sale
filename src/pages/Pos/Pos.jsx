@@ -23,6 +23,11 @@ class Pos extends Component {
       products: [],
       categories: [],
       isCartEmpty: false,
+      cartItems: [],
+      total: 0,
+      subTotal: 0,
+      discount: 0,
+      fee: 0
     };
   }
 
@@ -32,10 +37,59 @@ class Pos extends Component {
 
   viewProduct = () => {
     this.setState({ isProductShow: true });
-  };
+  }
+
+  calculateSubTotal = () => {
+    const subTotalPrice = this.state.cartItems.reduce((total, elem) => {
+      return total + (elem.price * elem.quantity)
+    }, 0)
+    this.setState({subTotal: subTotalPrice}, () => {
+      this.calculateTotal();
+    });
+  }
+
+  calculateTotal = () => {
+    const totalPrice = (this.state.subTotal + this.state.fee) - this.state.discount;
+    this.setState({total: totalPrice});
+  }
+
+  increaseQuantity = (id) => {
+    let isItemFound = false;
+    let itemList = this.state.cartItems.map((elem, i) => {
+      if (elem.id === id) {
+        elem.quantity = elem.quantity + 1;
+        isItemFound = true;
+      }
+      return elem;
+    });
+    this.setState({ cartItems: itemList }, () => {
+      this.calculateSubTotal();
+    });
+    return isItemFound;
+  }
+
+  addToCart = (id, src, title, price) => {
+    const item = {}
+    const itemList = this.state.cartItems;
+    let isItemExist = false;
+    if (this.state.cartItems.length > 0) {
+      isItemExist = this.increaseQuantity(id);
+    }
+    if (!isItemExist) {
+      item.id = id;
+      item.imgSRC = src;
+      item.title = title;
+      item.quantity = 1;
+      item.price = parseFloat(price);
+      itemList.push(item);
+      this.setState({ cartItems: itemList }, () => {
+        this.calculateSubTotal();
+      });
+    }
+  }
 
   render() {
-    const { categories, products, isProductShow } = this.state;
+    const { categories, products, isProductShow, cartItems, total, subTotal } = this.state;
     return (
       <main>
         {/* navbar section */}
@@ -81,27 +135,26 @@ class Pos extends Component {
             <div className='categoryList'>
               {!isProductShow
                 ? categories.map((elem, i) => {
-                    return (
-                      <div onClick={this.viewProduct}>
-                        <ProductCard
-                          name={elem.name}
-                          imgURL={elem.image.src.replace(/\\/g, '')}
-                        />
-                      </div>
-                    );
-                  })
+                  return (
+                    <div onClick={this.viewProduct}>
+                      <ProductCard
+                        name={elem.name}
+                        imgURL={elem.image.src.replace(/\\/g, '')}
+                      />
+                    </div>
+                  );
+                })
                 : products.map((elem, i) => {
-                    return (
-                      <div>
-                        <ProductCard
-                          name={elem.name}
-                          imgURL={elem.images[0].src.replace(/\\/g, '')}
-                          price={elem.price}
-                          onClick={this.viewProduct}
-                        />
-                      </div>
-                    );
-                  })}
+                  return (
+                    <div onClick={() => this.addToCart(elem.id, elem.images[0].src.replace(/\\/g, ''), elem.name, elem.price)}>
+                      <ProductCard
+                        name={elem.name}
+                        imgURL={elem.images[0].src.replace(/\\/g, '')}
+                        price={elem.price}
+                      />
+                    </div>
+                  );
+                })}
             </div>
           </article>
         </section>
@@ -117,16 +170,21 @@ class Pos extends Component {
             </div>
           </div>
           <div className='posItems'>
-            {this.state.isCartEmpty ? <EmptyCart /> : <CartWithItems />}
+            {cartItems.length > 0 ?
+              cartItems.map((elem, i) => {
+               return <CartWithItems id={elem.id} imgSRC={elem.imgSRC} title={elem.title} quantity={elem.quantity} price={elem.price} />
+              }):
+              <EmptyCart />
+            }
           </div>
           <div className='posTotals'>
             <div className='cartTotal subtotal'>
               <div className='totalLabel'>Subtotal</div>
-              <div className='totalPrice'>$0.00</div>
+              <div className='totalPrice'>${subTotal}</div>
             </div>
             <div className='cartTotal totalTotal'>
-              <div className='totalLabel'>Subtotal</div>
-              <div className='totalPrice'>$0.00</div>
+              <div className='totalLabel'>Total</div>
+              <div className='totalPrice'>${total}</div>
             </div>
           </div>
           <div className='posActions'>
