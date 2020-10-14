@@ -17,19 +17,21 @@ export default class CartWithItems extends Component {
   }
 
   render() {
-    const { id, imgSRC, title, price, quantity } = this.props;
+    const { id, imgSRC, title, price, quantity, changeQuantityNumber, removeCartItem } = this.props;
     const { isShowEdit } = this.state;
     return (
       <article key={id}>
         {/* item row */}
         <div className='itemRow'>
+          <span onClick={() => removeCartItem(id)}>
           <AiOutlineClose className='removeIcon' size='1.5em' />
+          </span>
           <img
             src={imgSRC}
             alt=''
             className='itemImage'
           />
-          <BiMessageDetail className='noteIcon' />
+          {/* <BiMessageDetail className='noteIcon' /> */}
           <div className='itemName'>
             <div className='nameTitle'>{title}</div>
             <div onClick={this.toggoleEdit}>
@@ -38,19 +40,19 @@ export default class CartWithItems extends Component {
           </div>
           <div className='itemQuantity'>
             <div className='quantity'>
-              <div className='minus'>-</div>
+              <div className='minus' onClick={() => changeQuantityNumber(id, 'decrease')}>-</div>
               <input
-                type='number'
+                type='text'
                 className='quantityNumber'
                 min='1'
                 max=''
                 value={quantity}
               />
-              <div className='plus'>+</div>
+              <div className='plus' onClick={() => changeQuantityNumber(id, 'increase')}>+</div>
             </div>
           </div>
           <div className='itemPrice'>${price}</div>
-          <div className='itemTotal'>${parseFloat(price) * quantity}</div>
+          <div className='itemTotal'>${(parseFloat(price) * quantity).toFixed(2)}</div>
         </div>
 
         {/* item edit row` */}
