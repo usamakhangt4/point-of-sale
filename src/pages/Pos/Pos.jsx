@@ -122,7 +122,6 @@ class Pos extends Component {
     } = this.state;
     return (
       <main>
-        <CustomerForm />
         {/* navbar section */}
         <Navbar />
 
@@ -130,7 +129,7 @@ class Pos extends Component {
         <section className='productList'>
           <article className='searchSection'>
             <div className='logo'>
-              <img src='/images/logo.jpeg' alt='logo' />
+              <img src='./logo.jpeg' alt='logo' />
             </div>
             <div className='search'>
               <div className='searchWrapper'>
@@ -164,13 +163,15 @@ class Pos extends Component {
           {/* pos category section */}
           <article className='categoryListContainer'>
             <div className='categoryList'>
-            {isProductShow &&
-              <div className='product-list__go-back-wrapper' onClick={this.goBackFromProducts}>
-                <div className='product-list__go-back'>
-                  <IoIosArrowBack size='3em' />
+              {isProductShow && (
+                <div
+                  className='product-list__go-back-wrapper'
+                  onClick={this.goBackFromProducts}>
+                  <div className='product-list__go-back'>
+                    <IoIosArrowBack size='3em' />
+                  </div>
                 </div>
-              </div>
-              }
+              )}
               {!isProductShow
                 ? categories.map((elem, i) => {
                     return (
@@ -210,7 +211,11 @@ class Pos extends Component {
           <div className='posTabs'>
             <div className='cartButtons'>
               <span className='active'>cart</span>
-              <span className='disabled'>Customer</span>
+              <span className='disabled' href='#open-modal'>
+                <a href='#open-modal'>
+                  Customer
+                </a>
+              </span>
               <span className='disabled'>Address</span>
               <span className='disabled'>cart-img</span>
             </div>
@@ -274,6 +279,16 @@ class Pos extends Component {
             </div>
           </div>
         </section>
+        {/* ################################## */}
+        <CustomerForm />
+
+        {/* <div className='container'> */}
+        {/* <div className='interior'> */}
+        <a className='btn' href='#open-modal'>
+          Basic CSS-Only Modal
+        </a>
+        {/* </div> */}
+        {/* </div> */}
       </main>
     );
   }
