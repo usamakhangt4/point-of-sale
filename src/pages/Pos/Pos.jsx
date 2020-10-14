@@ -45,7 +45,7 @@ class Pos extends Component {
     const subTotalPrice = this.state.cartItems.reduce((total, elem) => {
       return total + elem.price * elem.quantity;
     }, 0);
-    this.setState({ subTotal: subTotalPrice }, () => {
+    this.setState({ subTotal: subTotalPrice.toFixed(2) }, () => {
       this.calculateTotal();
     });
   };
@@ -56,11 +56,27 @@ class Pos extends Component {
     this.setState({ total: totalPrice });
   };
 
-  increaseQuantity = (id) => {
+  emptyCart = () => {
+    this.setState({ cartItems: [] }, () => {
+      this.calculateSubTotal();
+    }); 
+  }
+
+  removeItem = (id) => {
+    let itemList = this.state.cartItems.filter(elem => elem.id === id ? false : true);
+    this.setState({ cartItems: itemList }, () => {
+      this.calculateSubTotal();
+    }); 
+   }
+
+  changeQuantity = (id, type) => {
     let isItemFound = false;
     let itemList = this.state.cartItems.map((elem, i) => {
       if (elem.id === id) {
+        if(type === 'increase')
         elem.quantity = elem.quantity + 1;
+        else if (type === 'decrease' && elem.quantity > 1)
+        elem.quantity = elem.quantity - 1;
         isItemFound = true;
       }
       return elem;
@@ -76,7 +92,7 @@ class Pos extends Component {
     const itemList = this.state.cartItems;
     let isItemExist = false;
     if (this.state.cartItems.length > 0) {
-      isItemExist = this.increaseQuantity(id);
+      isItemExist = this.changeQuantity(id, 'increase');
     }
     if (!isItemExist) {
       item.id = id;
@@ -90,6 +106,10 @@ class Pos extends Component {
       });
     }
   };
+
+  goBackFromProducts = () => {
+    this.setState({isProductShow: false})
+  }
 
   render() {
     const {
@@ -144,11 +164,13 @@ class Pos extends Component {
           {/* pos category section */}
           <article className='categoryListContainer'>
             <div className='categoryList'>
-              <div className='product-list__go-back-wrapper'>
+            {isProductShow &&
+              <div className='product-list__go-back-wrapper' onClick={this.goBackFromProducts}>
                 <div className='product-list__go-back'>
                   <IoIosArrowBack size='3em' />
                 </div>
               </div>
+              }
               {!isProductShow
                 ? categories.map((elem, i) => {
                     return (
@@ -203,6 +225,8 @@ class Pos extends Component {
                     title={elem.title}
                     quantity={elem.quantity}
                     price={elem.price}
+                    changeQuantityNumber={this.changeQuantity}
+                    removeCartItem={this.removeItem}
                   />
                 );
               })
@@ -221,7 +245,7 @@ class Pos extends Component {
             </div>
           </div>
           <div className='posActions'>
-            <div className='cartAction emptyCart'>
+            <div className='cartAction emptyCart' onClick={this.emptyCart}>
               <AiOutlineClose size='1.3em' />
               <span className='label'>EmptyCart</span>
             </div>
