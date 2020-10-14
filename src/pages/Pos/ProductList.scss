@@ -149,7 +149,7 @@
   left: 0;
   right: 0;
   color: white;
-  height: 30px;
+  height: auto;
   padding: 0 2%;
   display: flex;
   align-items: center;
@@ -157,5 +157,27 @@
   justify-content: space-between;
 }
 
-
 // ##################################################
+
+.categoryList {
+  position: relative;
+  padding-left: 10%;
+  overflow-y: auto;
+}
+.product-list__go-back-wrapper {
+  position: absolute;
+  top: 0;
+  left: 1%;
+  height: 100%;
+  width: 50px;
+  .product-list__go-back {
+    height: 50%;
+    width: 50px;
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

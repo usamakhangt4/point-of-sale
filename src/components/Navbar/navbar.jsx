@@ -11,8 +11,16 @@ export default function navbar() {
     <React.Fragment>
       <nav className='navbar'>
         <div className='dropdown hamburgerMenu'>
-          <GiHamburgerMenu size='2em' />
+          <GiHamburgerMenu size='2em' className='dropbtn' />
+          <div className='dropdown-content'>
+            <a href='/'>Register Screen</a>
+            <a href='/'>Order History</a>
+            <a href='/'>Today's profit</a>
+            <a href='/'>Manage Cash</a>
+            <a href='/'>Close Register</a>
+          </div>
         </div>
+
         <div className='register-info'>
           <MdStoreMallDirectory className='icon-store' size='2em' />
           <span>

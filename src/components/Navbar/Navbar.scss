@@ -8,13 +8,7 @@
   align-items: stretch;
   justify-content: space-between;
   z-index: 999;
-  .dropdown {
-    width: 50px;
-    position: relative;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-  }
+
   .hamburgerMenu {
     background-color: $primary;
     margin: 0 15px 0 0;
@@ -110,4 +104,42 @@
     font-weight: 700;
     padding: 0 10px;
   }
+}
+
+.dropdown {
+  width: 50px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.dropdown-content {
+  // display: none;
+  background-color: $primary;
+  position: absolute;
+  top: 100%;
+  left: -500px;
+
+  width: 200px;
+  display: grid;
+}
+.dropdown-content a {
+  color: #fff;
+  text-decoration: none;
+  padding-left: 10%;
+  &:last-child {
+    background-color: $secondary;
+  }
+} /* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  left: 0;
+  transition: all 0.2s linear;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
 }

@@ -6,6 +6,7 @@ import { AiFillCalculator, AiOutlineClose } from 'react-icons/ai';
 import { MdRemoveShoppingCart, MdAdd, MdLocalShipping } from 'react-icons/md';
 import { BiMessageDetail } from 'react-icons/bi';
 import { RiPagesLine } from 'react-icons/ri';
+import { IoIosArrowBack } from 'react-icons/io';
 import { categories, products } from './../../common/data';
 
 import {
@@ -27,7 +28,7 @@ class Pos extends Component {
       total: 0,
       subTotal: 0,
       discount: 0,
-      fee: 0
+      fee: 0,
     };
   }
 
@@ -37,21 +38,22 @@ class Pos extends Component {
 
   viewProduct = () => {
     this.setState({ isProductShow: true });
-  }
+  };
 
   calculateSubTotal = () => {
     const subTotalPrice = this.state.cartItems.reduce((total, elem) => {
-      return total + (elem.price * elem.quantity)
-    }, 0)
-    this.setState({subTotal: subTotalPrice}, () => {
+      return total + elem.price * elem.quantity;
+    }, 0);
+    this.setState({ subTotal: subTotalPrice }, () => {
       this.calculateTotal();
     });
-  }
+  };
 
   calculateTotal = () => {
-    const totalPrice = (this.state.subTotal + this.state.fee) - this.state.discount;
-    this.setState({total: totalPrice});
-  }
+    const totalPrice =
+      this.state.subTotal + this.state.fee - this.state.discount;
+    this.setState({ total: totalPrice });
+  };
 
   increaseQuantity = (id) => {
     let isItemFound = false;
@@ -66,10 +68,10 @@ class Pos extends Component {
       this.calculateSubTotal();
     });
     return isItemFound;
-  }
+  };
 
   addToCart = (id, src, title, price) => {
-    const item = {}
+    const item = {};
     const itemList = this.state.cartItems;
     let isItemExist = false;
     if (this.state.cartItems.length > 0) {
@@ -86,10 +88,17 @@ class Pos extends Component {
         this.calculateSubTotal();
       });
     }
-  }
+  };
 
   render() {
-    const { categories, products, isProductShow, cartItems, total, subTotal } = this.state;
+    const {
+      categories,
+      products,
+      isProductShow,
+      cartItems,
+      total,
+      subTotal,
+    } = this.state;
     return (
       <main>
         {/* navbar section */}
@@ -133,28 +142,41 @@ class Pos extends Component {
           {/* pos category section */}
           <article className='categoryListContainer'>
             <div className='categoryList'>
+              <div className='product-list__go-back-wrapper'>
+                <div className='product-list__go-back'>
+                  <IoIosArrowBack size='3em' />
+                </div>
+              </div>
               {!isProductShow
                 ? categories.map((elem, i) => {
-                  return (
-                    <div onClick={this.viewProduct}>
-                      <ProductCard
-                        name={elem.name}
-                        imgURL={elem.image.src.replace(/\\/g, '')}
-                      />
-                    </div>
-                  );
-                })
+                    return (
+                      <div onClick={this.viewProduct}>
+                        <ProductCard
+                          name={elem.name}
+                          imgURL={elem.image.src.replace(/\\/g, '')}
+                        />
+                      </div>
+                    );
+                  })
                 : products.map((elem, i) => {
-                  return (
-                    <div onClick={() => this.addToCart(elem.id, elem.images[0].src.replace(/\\/g, ''), elem.name, elem.price)}>
-                      <ProductCard
-                        name={elem.name}
-                        imgURL={elem.images[0].src.replace(/\\/g, '')}
-                        price={elem.price}
-                      />
-                    </div>
-                  );
-                })}
+                    return (
+                      <div
+                        onClick={() =>
+                          this.addToCart(
+                            elem.id,
+                            elem.images[0].src.replace(/\\/g, ''),
+                            elem.name,
+                            elem.price
+                          )
+                        }>
+                        <ProductCard
+                          name={elem.name}
+                          imgURL={elem.images[0].src.replace(/\\/g, '')}
+                          price={elem.price}
+                        />
+                      </div>
+                    );
+                  })}
             </div>
           </article>
         </section>
@@ -170,12 +192,21 @@ class Pos extends Component {
             </div>
           </div>
           <div className='posItems'>
-            {cartItems.length > 0 ?
+            {cartItems.length > 0 ? (
               cartItems.map((elem, i) => {
-               return <CartWithItems id={elem.id} imgSRC={elem.imgSRC} title={elem.title} quantity={elem.quantity} price={elem.price} />
-              }):
+                return (
+                  <CartWithItems
+                    id={elem.id}
+                    imgSRC={elem.imgSRC}
+                    title={elem.title}
+                    quantity={elem.quantity}
+                    price={elem.price}
+                  />
+                );
+              })
+            ) : (
               <EmptyCart />
-            }
+            )}
           </div>
           <div className='posTotals'>
             <div className='cartTotal subtotal'>
