@@ -14,6 +14,7 @@ import {
   ProductCard,
   EmptyCart,
   CartWithItems,
+  CustomerForm,
 } from '../../components';
 
 class Pos extends Component {
@@ -101,6 +102,7 @@ class Pos extends Component {
     } = this.state;
     return (
       <main>
+        <CustomerForm />
         {/* navbar section */}
         <Navbar />
 
