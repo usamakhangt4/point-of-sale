@@ -222,10 +222,10 @@ class Pos extends Component {
               <a href='#' className='active cart-tabs'>
                 <MdShoppingCart size='1.5em' /> <span>Cart</span>
               </a>
-              <a href='#open-modal-customer cart-tabs'>
+              <a href='#open-modal-customer' className='cart-tabs'>
                 <RiUserFill size='1.5em' /> <span> Customer</span>
               </a>
-              <a href='#open-modal-address cart-tabs'>
+              <a href='#open-modal-address' className='cart-tabs'>
                 <MdLocationOn size='1.5em' /> <span>Address</span>
               </a>
               <a href='#' className='disabled cart-tabs'>
