@@ -3,9 +3,16 @@ import './Pos.scss';
 import './Cart.scss';
 import './ProductList.scss';
 import { AiFillCalculator, AiOutlineClose } from 'react-icons/ai';
-import { MdRemoveShoppingCart, MdAdd, MdLocalShipping } from 'react-icons/md';
+import {
+  MdRemoveShoppingCart,
+  MdAdd,
+  MdLocalShipping,
+  MdShoppingCart,
+  MdAddShoppingCart,
+  MdLocationOn,
+} from 'react-icons/md';
 import { BiMessageDetail } from 'react-icons/bi';
-import { RiPagesLine } from 'react-icons/ri';
+import { RiPagesLine, RiUserFill } from 'react-icons/ri';
 import { IoIosArrowBack } from 'react-icons/io';
 import { categories, products } from './../../common/data';
 
@@ -60,24 +67,25 @@ class Pos extends Component {
   emptyCart = () => {
     this.setState({ cartItems: [] }, () => {
       this.calculateSubTotal();
-    }); 
-  }
+    });
+  };
 
   removeItem = (id) => {
-    let itemList = this.state.cartItems.filter(elem => elem.id === id ? false : true);
+    let itemList = this.state.cartItems.filter((elem) =>
+      elem.id === id ? false : true
+    );
     this.setState({ cartItems: itemList }, () => {
       this.calculateSubTotal();
-    }); 
-   }
+    });
+  };
 
   changeQuantity = (id, type) => {
     let isItemFound = false;
     let itemList = this.state.cartItems.map((elem, i) => {
       if (elem.id === id) {
-        if(type === 'increase')
-        elem.quantity = elem.quantity + 1;
+        if (type === 'increase') elem.quantity = elem.quantity + 1;
         else if (type === 'decrease' && elem.quantity > 1)
-        elem.quantity = elem.quantity - 1;
+          elem.quantity = elem.quantity - 1;
         isItemFound = true;
       }
       return elem;
@@ -109,8 +117,8 @@ class Pos extends Component {
   };
 
   goBackFromProducts = () => {
-    this.setState({isProductShow: false})
-  }
+    this.setState({ isProductShow: false });
+  };
 
   render() {
     const {
@@ -211,13 +219,17 @@ class Pos extends Component {
         <section className='cart'>
           <div className='posTabs'>
             <div className='cartButtons'>
-              <a href='#open-modal' className='active'>
-                cart
+              <a href='#' className='active cart-tabs'>
+                <MdShoppingCart size='1.5em' /> <span>Cart</span>
               </a>
-              <a href='#open-modal-customer'>Customer</a>
-              <a href='#open-modal-address'>Address</a>
-              <a href='#' className='disabled'>
-                cart-img
+              <a href='#open-modal-customer cart-tabs'>
+                <RiUserFill size='1.5em' /> <span> Customer</span>
+              </a>
+              <a href='#open-modal-address cart-tabs'>
+                <MdLocationOn size='1.5em' /> <span>Address</span>
+              </a>
+              <a href='#' className='disabled cart-tabs'>
+                <MdAddShoppingCart size='1.5em' />
               </a>
             </div>
           </div>

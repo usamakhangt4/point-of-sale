@@ -6,13 +6,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid $light-grey;
+  border: 1px solid $border-grey;
   padding: 1rem 0.5rem;
   box-shadow: 0 1px 10px $box-shadow;
   cursor: pointer;
 }
 .customer-form-search {
-  border: 1px solid $light-grey;
+  border: 1px solid $border-grey;
   padding: 1rem 0.5rem;
   width: 100%;
   box-shadow: 0 1px 10px $box-shadow;
