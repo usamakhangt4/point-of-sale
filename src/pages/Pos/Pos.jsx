@@ -15,6 +15,7 @@ import {
   EmptyCart,
   CartWithItems,
   CustomerForm,
+  CustomerAddressForm,
 } from '../../components';
 
 class Pos extends Component {
@@ -210,14 +211,14 @@ class Pos extends Component {
         <section className='cart'>
           <div className='posTabs'>
             <div className='cartButtons'>
-              <span className='active'>cart</span>
-              <span className='disabled' href='#open-modal'>
-                <a href='#open-modal'>
-                  Customer
-                </a>
-              </span>
-              <span className='disabled'>Address</span>
-              <span className='disabled'>cart-img</span>
+              <a href='#open-modal' className='active'>
+                cart
+              </a>
+              <a href='#open-modal-customer'>Customer</a>
+              <a href='#open-modal-address'>Address</a>
+              <a href='#' className='disabled'>
+                cart-img
+              </a>
             </div>
           </div>
           <div className='posItems'>
@@ -281,14 +282,7 @@ class Pos extends Component {
         </section>
         {/* ################################## */}
         <CustomerForm />
-
-        {/* <div className='container'> */}
-        {/* <div className='interior'> */}
-        <a className='btn' href='#open-modal'>
-          Basic CSS-Only Modal
-        </a>
-        {/* </div> */}
-        {/* </div> */}
+        <CustomerAddressForm />
       </main>
     );
   }

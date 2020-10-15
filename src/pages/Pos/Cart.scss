@@ -3,7 +3,7 @@
 .cart {
   padding: 15px;
   padding-top: 0;
-    height: calc(100vh - 50px);
+  height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
   border-left: 1px solid $light-grey;
@@ -16,7 +16,7 @@
       display: flex;
       background-color: $light-grey;
 
-      span.active {
+      a.active {
         background: white;
       }
     }
@@ -43,11 +43,12 @@
   margin-right: 2px;
 }
 
-.cartButtons > span {
+.cartButtons > a {
   background: $light-grey;
   color: black;
   position: relative;
   padding: 15px 30px 15px 45px;
+  font-weight: bold;
 }
 
 // #################    pos items  #######################
@@ -129,7 +130,7 @@
     grid-area: empty-cart;
     min-height: 35px;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     place-items: center;
     width: 110px;
     span {

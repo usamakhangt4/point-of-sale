@@ -3,3 +3,4 @@ export * from './ProductCard';
 export * from './EmptyCart';
 export * from './CartWithItems';
 export * from './CustomerForm';
+export * from './CustomerAddressForm';

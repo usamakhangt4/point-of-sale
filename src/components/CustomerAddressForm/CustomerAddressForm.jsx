@@ -1,10 +1,10 @@
 import React from 'react';
-import './CustomerForm.scss';
+import './CustomerAddressForm.scss';
 
 export default function CustomerForm() {
   return (
     <>
-      <div id='open-modal-customer' className='modal-window'>
+      <div id='open-modal-address' className='modal-window'>
         <div className='modal'>
           <div className='modal-header'>
             <strong>Shipping Address</strong>
