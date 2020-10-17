@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "df360d274c88cda492336796c3b3faf6",
+    "revision": "88eaec7366337ebe01d8ae13244c533c",
     "url": "/point-of-sale/index.html"
   },
   {
-    "revision": "820cc2b3baab7e595c07",
-    "url": "/point-of-sale/static/css/main.65e2beed.chunk.css"
+    "revision": "7d15c7a71c212b6000b8",
+    "url": "/point-of-sale/static/css/main.b89523a9.chunk.css"
   },
   {
     "revision": "a6aaa8b7dbe19a2376ce",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/point-of-sale/static/js/2.ac82f9c0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "820cc2b3baab7e595c07",
-    "url": "/point-of-sale/static/js/main.17c65bb0.chunk.js"
+    "revision": "7d15c7a71c212b6000b8",
+    "url": "/point-of-sale/static/js/main.31b88e24.chunk.js"
   },
   {
     "revision": "c9e85923e49d07298fd3",
