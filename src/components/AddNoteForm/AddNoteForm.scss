@@ -1,0 +1,42 @@
+@import '../../styles/common.scss';
+.modal-header {
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid $light-grey;
+}
+
+.modal-close-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+
+  .order-total-price {
+    color: $primary;
+    margin-right: 1rem;
+  }
+}
+.addNoteForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+
+  .note {
+    outline: none;
+    border: 1px solid $border-grey;
+    padding: 1rem 0.5rem;
+    font-family: 'Roboto', sans-serif;
+  }
+  button {
+    background: $note_button_background;
+    border: none;
+    color: white;
+    padding: .5rem;
+    font-size: 1.3rem;
+    letter-spacing: .3rem;
+  }
+}

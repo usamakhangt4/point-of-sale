@@ -6,6 +6,7 @@ import { BsBellFill } from 'react-icons/bs';
 import { RiLogoutBoxRLine } from 'react-icons/ri';
 import { CgMaximizeAlt } from 'react-icons/cg';
 
+
 export default function navbar() {
   return (
     <React.Fragment>

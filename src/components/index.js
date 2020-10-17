@@ -4,3 +4,8 @@ export * from './EmptyCart';
 export * from './CartWithItems';
 export * from './CustomerForm';
 export * from './CustomerAddressForm';
+export * from './AddNoteForm';
+export * from './CouponForm';
+export * from './ShippingForm';
+export * from './DiscountForm';
+export * from './SaveCartForm';

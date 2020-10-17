@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ProductCard(props) {
+export default function ProductCard(props) { 
     return (
         <div className='productCategory category1'>
             <div className='categoryImage image' style={{ backgroundImage: `url("${props.imgURL}")` }}></div>

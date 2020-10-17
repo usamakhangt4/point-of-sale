@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import './Pos.scss';
 import './Cart.scss';
@@ -23,6 +24,11 @@ import {
   CartWithItems,
   CustomerForm,
   CustomerAddressForm,
+  AddNoteForm,
+  CouponForm,
+  ShippingForm,
+  DiscountForm,
+  SaveCartForm,
 } from '../../components';
 
 class Pos extends Component {
@@ -228,7 +234,7 @@ class Pos extends Component {
               <a href='#open-modal-address' className='cart-tabs'>
                 <MdLocationOn size='1.5em' /> <span>Address</span>
               </a>
-              <a href='#' className='disabled cart-tabs'>
+              <a href='/' className='disabled cart-tabs'>
                 <MdAddShoppingCart size='1.5em' />
               </a>
             </div>
@@ -267,34 +273,42 @@ class Pos extends Component {
               <AiOutlineClose size='1.3em' />
               <span className='label'>EmptyCart</span>
             </div>
-            <div className='cartAction addNote'>
+            <a href='#open-modal-addNote' className='cartAction addNote'>
               <BiMessageDetail className='icon' size='1.5em' />
               <span className='label'>Add Note</span>
-            </div>
-            <div className='cartAction discount'>
+            </a>
+            <a href='#open-modal-DiscountForm' className='cartAction discount'>
               <MdAdd size='1.5em' className='icon' />
               <span className='label'>Add fee or discount</span>
-            </div>
-            <div className='cartAction coupon'>
+            </a>
+            <a href='#open-modal-CouponForm' className='cartAction coupon'>
               <RiPagesLine size='1.5em' className='icon' />
               <span className='label'>Apply coupon</span>
-            </div>
-            <div className='cartAction shipping'>
+            </a>
+            <a href='#open-modal-ShippingForm' className='cartAction shipping'>
               <MdLocalShipping size='1.5em' className='icon' />
               <span className='label'>Shipping</span>
-            </div>
-            <div className='cartAction save disabled'>
+            </a>
+            <a
+              href='#open-modal-SaveCartForm'
+              className='cartAction save disabled'>
               <MdRemoveShoppingCart size='1.5em' className='icon' />
               <span className='label'>Suspend & save cart</span>
-            </div>
-            <div className='cartAction pay disabled'>
+            </a>
+            <a href='#open-modal-' className='cartAction pay disabled'>
               <span className='label'>Pay</span>
-            </div>
+            </a>
           </div>
         </section>
         {/* ################################## */}
-        <CustomerForm />
+
+        <SaveCartForm />
+        <ShippingForm />
+        <CouponForm />
+        <DiscountForm />
+        <AddNoteForm />
         <CustomerAddressForm />
+        <CustomerForm />
       </main>
     );
   }
