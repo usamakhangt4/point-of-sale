@@ -149,7 +149,8 @@ article {
         padding: 10px;
         line-height: 1.2em;
         display: inline-block;
-        float: right;
+        // float: right;
+        justify-self: end;
       }
       .editNoteButtonWrapper {
         display: block;
@@ -170,4 +171,22 @@ article {
       }
     }
   }
+}
+
+.edit-item-calculator-wrapper {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  background-color: white;
+  box-shadow: 0 0 20px gray;
+  border-radius: 4px;
+}
+
+.show-calculator {
+  opacity: 1;
+  top: 100%;
+  right: 2%;
+  width: 200px;
+  height: 150px;
 }
