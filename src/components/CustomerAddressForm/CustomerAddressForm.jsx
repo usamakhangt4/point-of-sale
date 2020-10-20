@@ -6,7 +6,7 @@ export default function CustomerForm() {
     <>
       <div id='open-modal-address' className='modal-window'>
         <div className='modal'>
-          <div className='modal-header'>
+          <div className='modal-header-top'>
             <strong>Shipping Address</strong>
             <a href='#' title='Close' className='modal-close'>
               <strong>Close</strong>
@@ -312,11 +312,7 @@ export default function CustomerForm() {
               <input type='text' name='' id='state' />
             </div>
             <div className='submit customer-address-input-field'>
-              <input
-                type='submit'
-                name=''
-                value='SAVE SHIPPING ADDRESS'
-              />
+              <input type='submit' name='' value='SAVE SHIPPING ADDRESS' />
             </div>
 
             {/* end */}

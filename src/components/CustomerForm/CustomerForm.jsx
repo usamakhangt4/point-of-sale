@@ -6,7 +6,7 @@ export default function CustomerForm() {
     <>
       <div id='open-modal-customer' className='modal-window'>
         <div className='modal'>
-          <div className='modal-header'>
+          <div className='modal-header-top'>
             <strong>Set customer's profile</strong>
             <a href='#' title='Close' className='modal-close'>
               <strong>Close</strong>

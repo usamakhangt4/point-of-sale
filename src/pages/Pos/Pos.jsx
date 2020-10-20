@@ -161,19 +161,20 @@ class Pos extends Component {
           </article>
           {/* pos tabs section */}
           <article className='posTabs'>
-            <div className='productListFilters'>
-              <span className='active'>All</span>
-              <span className=''>On sale</span>
-              <span className=''>Featured</span>
-            </div>
-            <div className='productActions'>
+            {/* <div className='productListFilters'> */}
+              {/* <button className='active'>All</button> */}
+              <button className=''>All</button>
+              <button className=''>On sale</button>
+              <button className=''>Featured</button>
+            {/* </div> */}
+            {/* <div className='productActions'>
               <span className='addProduct  disabled'>
                 <i className='icon-add'></i> Add product
               </span>
               <span className='scanProduct  disabled'>
                 <i className='icon-barcode'></i> Scan product
               </span>
-            </div>
+            </div> */}
           </article>
           {/* pos category section */}
           <article className='categoryListContainer'>

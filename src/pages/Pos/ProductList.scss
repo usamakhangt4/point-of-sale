@@ -1,8 +1,9 @@
 @import '../../styles/common.scss';
 
 .productList {
+  height: calc(100vh - 55px);
+  // border: 1px solid red;
   grid-area: list;
-  //   height: calc(100vh - 50px - var(--top-offset));
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
@@ -74,24 +75,35 @@
   //   product tabs section
   .posTabs {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 5px;
     font-size: 0.8em;
     flex: 0 0 auto;
     // product filters
-    .productListFilters {
-      .active {
+    // .productListFilters {
+    .active {
+      background: $products_background;
+      color: #333;
+    }
+    button {
+      flex: 1;
+      border: none;
+      display: inline-block;
+      padding: 10px 25px;
+      cursor: pointer;
+      background: $primary;
+      color: #fff;
+      font-weight: 600;
+      transition: all 0.2s;
+      // margin-left: 1px;
+      &:focus {
         background: $products_background;
         color: #333;
-      }
-      span {
-        display: inline-block;
-        padding: 10px 25px;
-        cursor: pointer;
-        background: $primary;
-        color: #fff;
-        font-weight: 600;
-        transition: all 0.2s;
+        outline: none;
       }
     }
+    // }
     // productActions
     .productActions {
       .addProduct {
@@ -117,47 +129,48 @@
 }
 
 .categoryListContainer {
-  height: calc(100% - 122px);
-}
-.categoryList {
-  display: grid;
-  padding: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-  background: $products_background;
-  height: 100%;
-  overflow-y: auto;
-  align-content: start;
-}
+  height: calc(100vh - 220px);
+  max-width: auto;
 
-.productCategory {
-  position: relative;
-  &:hover {
-    opacity: 0.7;
-    cursor: pointer;
+  .categoryList {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    background: $products_background;
+    height: 100%;
+    overflow-y: auto;
+    align-content: start;
+  }
+
+  .productCategory {
+    position: relative;
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+
+  .categoryImage {
+    height: 28vh;
+    background-size: cover;
+    background-position: center center;
+  }
+  .categoryHeading {
+    background: $products_title_background;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    height: auto;
+    padding: 0 2%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    justify-content: space-between;
   }
 }
-
-.categoryImage {
-  height: 28vh;
-  background-size: cover;
-  background-position: center center;
-}
-.categoryHeading {
-  background: $products_title_background;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: white;
-  height: auto;
-  padding: 0 2%;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  justify-content: space-between;
-}
-
 // ##################################################
 
 .categoryList {
