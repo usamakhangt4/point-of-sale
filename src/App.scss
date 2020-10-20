@@ -1,1 +1,12 @@
-// 
+//
+html {
+  body {
+    &* > {
+      font-family: 'Roboto', sans-serif;
+    }
+    figure {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

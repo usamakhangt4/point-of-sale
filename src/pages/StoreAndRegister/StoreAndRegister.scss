@@ -1,0 +1,33 @@
+@import '../../styles/common.scss';
+
+.store-and-register-page {
+  background-color: $maroon;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  .store-and-register-wrapper {
+    background: white;
+    padding: 3% 5%;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+
+    .store-and-register-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      row-gap: 20px;
+
+      select {
+        padding: 0 10px;
+        width: 300px;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+      }
+    }
+  }
+}

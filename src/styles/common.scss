@@ -52,7 +52,19 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid $light-grey;
 }
 /* Demo Styles */
+input,
+select {
+  border: 1px solid $border-grey;
+  height: 2.5rem;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+    border: 1px solid $primary;
+    border-radius: 4px;
+    transition-duration: 0.3s;
+  }
+}

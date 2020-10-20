@@ -1,0 +1,30 @@
+@import '../../styles/common.scss';
+
+.login-page {
+  background-color: $maroon;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  .login-wrapper {
+    background: white;
+    padding: 3% 5%;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0,0.4);
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      row-gap: 20px;
+
+      input {
+        padding: 0 10px;
+      }
+    }
+  }
+}
