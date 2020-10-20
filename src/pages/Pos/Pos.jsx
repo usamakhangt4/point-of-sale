@@ -152,20 +152,25 @@ class Pos extends Component {
               </div>
             </div>
             <div className='button'>
-              <div className='calculatorWrapper'>
-                <a href='/'>
+              <div className='search-section-calculator-button'>
+                <a href='#'>
                   <AiFillCalculator size='2.1em' />
                 </a>
+                <div className='search-section-edit-item-calculator-wrapper search-section-show-calculator'>
+                  <div className='search-section-edit-item-calculator'>
+                    <h1>calculator here </h1>
+                  </div>
+                </div>
               </div>
             </div>
           </article>
           {/* pos tabs section */}
           <article className='posTabs'>
             {/* <div className='productListFilters'> */}
-              {/* <button className='active'>All</button> */}
-              <button className=''>All</button>
-              <button className=''>On sale</button>
-              <button className=''>Featured</button>
+            {/* <button className='active'>All</button> */}
+            <button className=''>All</button>
+            <button className=''>On sale</button>
+            <button className=''>Featured</button>
             {/* </div> */}
             {/* <div className='productActions'>
               <span className='addProduct  disabled'>

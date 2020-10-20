@@ -81,7 +81,7 @@ export default class CartWithItems extends Component {
                     <h1>calculator here </h1>
                   </div>
                 </div>
-              </div>
+              </div> 
             </div>
             <div className='editNote'>
               <div className='editNoteLabel'>
