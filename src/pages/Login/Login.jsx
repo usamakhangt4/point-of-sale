@@ -63,11 +63,13 @@ export default class Login extends Component {
                   type='email'
                   value={this.state.email}
                   onChange={this.onEmailChange}
+                  placeholder="someone@pos.com"
                 />
                 <input
                   type='password'
                   value={this.state.password}
                   onChange={this.onPasswordChange}
+                  placeholder="password"
                 />
                 <button onClick={this.handleLogin} className='auth-card-button'>
                   Login
