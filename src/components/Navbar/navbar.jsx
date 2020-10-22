@@ -6,6 +6,7 @@ import { BsBellFill } from 'react-icons/bs';
 import { RiLogoutBoxRLine } from 'react-icons/ri';
 import { CgMaximizeAlt } from 'react-icons/cg';
 import AuthService from './../../services/AuthService';
+import userImg from '../../images/user.jpeg';
 
 export default function navbar() {
   function logoutUser() {
@@ -54,7 +55,7 @@ export default function navbar() {
         </div>
         <div className='dropdown view-user'>
           <figure>
-            <img src='/images/user.jpeg' alt='user img' />
+            <img src={userImg} alt='user img' />
             <figcaption>
               <strong>Posonline909</strong>
             </figcaption>

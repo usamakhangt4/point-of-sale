@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from './../../services/AuthService';
 import getAuthHeader from './../../services/auth-header';
+import logo from '../../images/logo.jpeg';
 
 import './Login.scss';
 
@@ -52,8 +53,10 @@ export default class Login extends Component {
       <section className='login-page'>
         <div className='login-wrapper'>
           {!this.state.isShowSelection ? (
-            <figure>
-              <img src='images/logo.jpeg' alt='logo' />
+            <article>
+              <figure className='logo'>
+                <img src={logo} alt='logo' />
+              </figure>
               <h2>Login</h2>
               <div className='login-form'>
                 <input
@@ -70,10 +73,12 @@ export default class Login extends Component {
                   Login
                 </button>
               </div>
-            </figure>
+            </article>
           ) : (
-            <figure>
-              <img src='images/logo.jpeg' alt='logo' />
+            <article>
+              <figure className='logo'>
+                <img src={logo} alt='logo' />
+              </figure>
               <h2>Choose Store and Register</h2>
               <form action='#' className='store-and-register-form'>
                 <select name='' id=''>
@@ -92,7 +97,7 @@ export default class Login extends Component {
                   Open Register
                 </button>
               </form>
-            </figure>
+            </article>
           )}
         </div>
       </section>

@@ -85,3 +85,11 @@ select {
     outline: none;
   }
 }
+.logo {
+  padding: 10px;
+  margin: 10px;
+  img {
+    max-width: 140px;
+    max-height: 100px;
+  }
+}

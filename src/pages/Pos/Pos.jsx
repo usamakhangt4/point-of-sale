@@ -16,7 +16,10 @@ import { BiMessageDetail } from 'react-icons/bi';
 import { RiPagesLine, RiUserFill } from 'react-icons/ri';
 import { IoIosArrowBack } from 'react-icons/io';
 import { categories, products } from './../../common/data';
-import Calculator from '../../components/Calculator/Calculator/Calculator'
+import Calculator from '../../components/Calculator/Calculator/Calculator';
+import logo from '../../images/logo.jpeg';
+
+
 import {
   Navbar,
   ProductCard,
@@ -144,7 +147,7 @@ class Pos extends Component {
         <section className='productList'>
           <article className='searchSection'>
             <div className='logo'>
-              <img src='./logo.jpeg' alt='logo' />
+              <img src={logo} alt='logo' />
             </div>
             <div className='search'>
               <div className='searchWrapper'>

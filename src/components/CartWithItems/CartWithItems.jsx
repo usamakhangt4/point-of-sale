@@ -28,7 +28,7 @@ export default class CartWithItems extends Component {
     } = this.props;
     const { isShowEdit } = this.state;
     return (
-      <article key={id}>
+      <article key={id} className="cartWithItems">
         {/* item row */}
         <div className='itemRow'>
           <span onClick={() => removeCartItem(id)}>
