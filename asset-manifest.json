@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/point-of-sale/static/css/main.d9e72a9c.chunk.css",
-    "main.js": "/point-of-sale/static/js/main.a1cc4684.chunk.js",
-    "main.js.map": "/point-of-sale/static/js/main.a1cc4684.chunk.js.map",
+    "main.js": "/point-of-sale/static/js/main.56301149.chunk.js",
+    "main.js.map": "/point-of-sale/static/js/main.56301149.chunk.js.map",
     "runtime-main.js": "/point-of-sale/static/js/runtime-main.bca5b4d8.js",
     "runtime-main.js.map": "/point-of-sale/static/js/runtime-main.bca5b4d8.js.map",
     "static/js/2.013c9e9d.chunk.js": "/point-of-sale/static/js/2.013c9e9d.chunk.js",
     "static/js/2.013c9e9d.chunk.js.map": "/point-of-sale/static/js/2.013c9e9d.chunk.js.map",
     "index.html": "/point-of-sale/index.html",
-    "precache-manifest.44eaba0a37390eaaa27d1d781a83b32b.js": "/point-of-sale/precache-manifest.44eaba0a37390eaaa27d1d781a83b32b.js",
+    "precache-manifest.0a1ad0bbd98e5d3cb6c406eae0b39603.js": "/point-of-sale/precache-manifest.0a1ad0bbd98e5d3cb6c406eae0b39603.js",
     "service-worker.js": "/point-of-sale/service-worker.js",
     "static/css/main.d9e72a9c.chunk.css.map": "/point-of-sale/static/css/main.d9e72a9c.chunk.css.map",
     "static/js/2.013c9e9d.chunk.js.LICENSE.txt": "/point-of-sale/static/js/2.013c9e9d.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.bca5b4d8.js",
     "static/js/2.013c9e9d.chunk.js",
     "static/css/main.d9e72a9c.chunk.css",
-    "static/js/main.a1cc4684.chunk.js"
+    "static/js/main.56301149.chunk.js"
   ]
 }
