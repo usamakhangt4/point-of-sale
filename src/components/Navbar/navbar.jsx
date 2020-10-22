@@ -5,9 +5,14 @@ import { MdStoreMallDirectory } from 'react-icons/md';
 import { BsBellFill } from 'react-icons/bs';
 import { RiLogoutBoxRLine } from 'react-icons/ri';
 import { CgMaximizeAlt } from 'react-icons/cg';
-
+import AuthService from './../../services/AuthService';
 
 export default function navbar() {
+  function logoutUser() {
+    AuthService.logout();
+    this.props.history.push('/login');
+  }
+
   return (
     <React.Fragment>
       <nav className='navbar'>
@@ -55,7 +60,7 @@ export default function navbar() {
             </figcaption>
           </figure>
         </div>
-        <div className='logout'>
+        <div className='logout' onClick={logoutUser}>
           <a href='/'>
             <RiLogoutBoxRLine size='2em' />
             logout
