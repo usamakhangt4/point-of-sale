@@ -16,7 +16,7 @@ import { BiMessageDetail } from 'react-icons/bi';
 import { RiPagesLine, RiUserFill } from 'react-icons/ri';
 import { IoIosArrowBack } from 'react-icons/io';
 import { categories, products } from './../../common/data';
-
+import Calculator from '../../components/Calculator/Calculator/Calculator'
 import {
   Navbar,
   ProductCard,
@@ -156,11 +156,11 @@ class Pos extends Component {
                 <a href='#'>
                   <AiFillCalculator size='2.1em' />
                 </a>
-                <div className='search-section-edit-item-calculator-wrapper search-section-show-calculator'>
+                {/* <div className='search-section-edit-item-calculator-wrapper search-section-show-calculator'>
                   <div className='search-section-edit-item-calculator'>
-                    <h1>calculator here </h1>
+                    <Calculator/>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </article>
